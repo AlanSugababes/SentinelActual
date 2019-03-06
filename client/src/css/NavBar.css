@@ -1,0 +1,35 @@
+ul.topNav{
+    float:right;
+padding-right:20px;
+margin-right:100px;
+text-align:right;
+list-style:none;
+display: inline-block;
+}
+
+ul li{
+    display: inline-block;
+    padding: 10px 20px;
+    cursor:pointer;
+    text-decoration: none;
+    color:#ffffff;
+    transition:0.3s;
+    font: bold 16px Arial;
+}
+
+ul li.active a {
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #ffff00;
+}
+
+.brand {
+   font: bold 38px Arial;    
+}
+

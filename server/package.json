@@ -1,0 +1,23 @@
+{
+  "name": "sentinelwebsite",
+  "version": "1.0.0",
+  "description": "Boilerplate for react and express",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "cd client && npm install",
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+
+  "author": "Josh Saul",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.17"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
