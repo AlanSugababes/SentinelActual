@@ -46,7 +46,7 @@ app.post("/", (req, res) => {
 	form.on("end", function() {
         
         // res.sendFile(__dirname + "/Uploaded.html");
-        res.redirect("http://localhost:3000/FileSubmitted")
+        res.redirect("http://http://51.141.229.78:3000/FileSubmitted")
     }); 
 
        
