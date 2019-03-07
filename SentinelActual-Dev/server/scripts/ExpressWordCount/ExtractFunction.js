@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 let extractKeywords = function(assessedPages, keywordList) {
 
   let extractedText = [];
@@ -20,7 +22,9 @@ let extractKeywords = function(assessedPages, keywordList) {
     keywordCount.push(tempObject);
   }
 
-  return keywordCount;
+  fs.writeFileSync('./report/report.json', JSON.stringify(keywordCount), function(err){
+    if(err){ return err; }
+  })
 }
 
 module.exports = {
