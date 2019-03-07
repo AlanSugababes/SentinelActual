@@ -6,8 +6,7 @@ class SelectFile extends Component {
         return (
 
                 <div>
-                     Select File: 
-                    <input type="file" id="fileUpload" onChange={this.props.clickable}/>
+                     
                  
                 </div>
         );

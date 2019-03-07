@@ -75,8 +75,8 @@ class Upload extends Component {
 
 
 
-    submitFile() {
-
+    submitFile(event) {
+        event.preventDefault();
         let reportTitleValue = document.getElementById('ReportName').value;
         let filevalue = document.getElementById('fileUpload').value;
 
@@ -97,6 +97,18 @@ class Upload extends Component {
 
         }
 
+        fetch('https://localhost:5000/', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                firstParam: 'yourValue',
+                secondParam: 'yourOtherValue',
+            })
+        })
+
 
 
     }
@@ -112,7 +124,7 @@ class Upload extends Component {
 refresh(){
 document.location.reload(true);
 }
-    change
+
 
 
     render() {
@@ -124,10 +136,11 @@ document.location.reload(true);
                 <p id="intro">Welcome. In order to use this upload service you will need to select <br></br>
                     a PDF file. Please select one and add a title for the report to continue.</p>
                     
-                    <form>
+                    <form action="/" encType="multipart/form-data" method="post" >
                         <div  className="reportSection"><ReportTitle clickable={this.ableToSubmit} /></div>
-                        <div className="chooseFile"> <SelectFile  clickable={this.ableToSubmit} /></div>
-                        <button onClick={this.submitFile} id="submitButton" >Submit</button>
+                        Select File: 
+                        <input id="fileUpload" required="required" type="file" name="upload" accept=".pdf" onChange={this.ableToSubmit}/>
+                        <input type="submit" onSubmit={this.submitFile} value="Upload" id="submitButton" />
                     </form>
         
                     <p>{this.state.fileTypeMessage}</p>
