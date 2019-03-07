@@ -15,7 +15,6 @@ class AddKeyword extends Component{
 
         this.submitKeyword = this.submitKeyword.bind(this);
         this.ableToSubmit = this.ableToSubmit.bind(this);
-        this.refresh = this.refresh.bind(this);
     }
 
     componentDidMount(){
@@ -57,7 +56,20 @@ class AddKeyword extends Component{
     }
 
     submitKeyword() {
+        let request = new XMLHttpRequest();
+
+        request.open('POST', 'http://localhost:5000/api/keywords', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+
         let keywordValue = document.getElementById('NewKeyword').value;
+
+        let jsonString = JSON.stringify(
+            {'word': keywordValue}
+        )
+
+        request.send(jsonString);
+
+
 
         if(keywordValue !==""){
             this.setState({
@@ -67,12 +79,6 @@ class AddKeyword extends Component{
             });
         }
     }
-
-refresh(){
-    document.location.reload(true);
-    }
-        change
-        
         
         render() {
         
@@ -90,9 +96,6 @@ refresh(){
                         <p>{this.state.blankKeywordMessage}</p>
                         <p>{this.state.duplicateKeywordMessage}</p>
                         <p>{this.state.submitMessage}</p>
-        
-                        <button onClick={this.refresh} id="refreshButton" >Enter another keyword</button>
-        
                     </div>
         
                  

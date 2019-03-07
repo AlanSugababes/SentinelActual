@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const keywords = require('./routes/api/keywords');
 const app = express();
 const formidable = require('formidable');
+const cors = require('cors')
 let dir = __dirname + "/uploads";
 const fs = require("fs");
 
@@ -13,6 +14,9 @@ app.use(bodyParser.json());
 
 // DB Config
 const db = require('./config/keys').mongoURI;
+
+//Cors bypass functionality
+app.use(cors());
 
 //Formidable
 if (!fs.existsSync(dir)) {
