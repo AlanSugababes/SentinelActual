@@ -88,29 +88,7 @@ class Upload extends Component {
                 submitMessage: "File Has Been Submitted"
 
             });
-
-            let filePath = document.getElementById('fileUpload').value;
-            console.log(filePath);
-
-
-            return filePath;
-
         }
-
-        fetch('https://localhost:5000/', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                firstParam: 'yourValue',
-                secondParam: 'yourOtherValue',
-            })
-        })
-
-
-
     }
 
     showKeyWords() {
@@ -147,7 +125,7 @@ document.location.reload(true);
                     <p>{this.state.reportNameMessage}</p>
                     <p>{this.state.submitMessage}</p>
 
-                    <button onClick={this.refresh} id="refreshButton" >New Submition</button>
+                    <button onClick={this.refresh} id="refreshButton" >New Submission</button>
 
                     <p id="keyWordLocation" hidden > KeyWords: <input type="text" id ="keyWordAmount" /> </p>
 

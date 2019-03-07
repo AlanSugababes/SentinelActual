@@ -44,7 +44,9 @@ app.post("/", (req, res) => {
     });
 
 	form.on("end", function() {
-        res.sendFile(__dirname + "/Uploaded.html");
+        
+        // res.sendFile(__dirname + "/Uploaded.html");
+        res.redirect("http://localhost:3000")
     }); 
 
        
