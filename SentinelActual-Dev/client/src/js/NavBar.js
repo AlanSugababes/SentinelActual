@@ -30,7 +30,7 @@ class NavBar extends Component {
             <div>
             <Router>
                     <nav>
-                        <div className="navMenu">
+                        <div className="navMenu"><h2><img src="Sentinel.png" width="50" height="50" />    Sentinel</h2>
                             <ul className="topNav" id="topNavJS">
                                 <li><Link to="/">{this.state.page1}</Link></li>
                                 <li><Link to="/AddKeyword">{this.state.page2}</Link></li>
