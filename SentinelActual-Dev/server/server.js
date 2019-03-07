@@ -8,7 +8,6 @@ const cors = require('cors')
 let dir = __dirname + "/uploads";
 const fs = require("fs");
 
-
 //Bodyparser Middleware
 app.use(bodyParser.json());
 
