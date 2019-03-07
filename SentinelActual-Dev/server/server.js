@@ -20,14 +20,18 @@ app.use(cors());
 
 //Formidable
 if (!fs.existsSync(dir)) {
-  console.log("Folder Created!"); 
+  console.log("Folder Created!");
   fs.mkdirSync(dir);
 }
 app.get("/s", (req,res) =>{
 
 });
 app.get("/", (req, res) => {
-    res.send("")
+
+    let fileName = fs.readdirSync("./scripts/ExpressWordCount/report/");
+    let fileContents = fs.readFileSync("./scripts/ExpressWordCount/report/" + 'report.json');
+
+    res.send(JSON.parse(fileContents));
 })
 
 app.post("/", (req, res) => {
@@ -44,15 +48,15 @@ app.post("/", (req, res) => {
     });
 
 	form.on("end", function() {
-        
+
         // res.sendFile(__dirname + "/Uploaded.html");
         res.redirect("http://localhost:3000/FileSubmitted")
-    }); 
+    });
 
-       
+
 });
 
-    
+
 //Connect to Mongo
 mongoose
     .connect(db)
