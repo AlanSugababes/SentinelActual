@@ -1,0 +1,3 @@
+ img, nav {display: none;}
+.hideMe {display: none;}
+ #sensitive img{display: block; visibility: visible;}
