@@ -32,10 +32,10 @@ class NavBar extends Component {
                     <nav>
                         <div className="navMenu">
                             <ul className="topNav" id="topNavJS">
-                                <Link to="/">{this.state.page1}</Link>
-                                <Link to="/AddKeyword">{this.state.page2}</Link>
-                                <Link to="/History">{this.state.page3}</Link>
-                                <Link to="/Help">{this.state.page4}</Link>
+                                <li><Link to="/">{this.state.page1}</Link></li>
+                                <li><Link to="/AddKeyword">{this.state.page2}</Link></li>
+                                <li><Link to="/History">{this.state.page3}</Link></li>
+                                <li><Link to="/Help">{this.state.page4}</Link></li>
                             </ul> 
                               <Route exact path="/" component={Upload}/> 
                               <Route exact path="/AddKeyword" component={AddKeyword}/>     
