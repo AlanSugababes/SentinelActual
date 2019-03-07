@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const keywords = require('./routes/api/keywords');
 const app = express();
+const formidable = require('formidable');
+let dir = __dirname + "/uploads";
+const fs = require("fs");
 
-var formidable = require('formidable');
 
 //Bodyparser Middleware
 app.use(bodyParser.json());
@@ -13,12 +15,18 @@ app.use(bodyParser.json());
 const db = require('./config/keys').mongoURI;
 
 //Formidable
+if (!fs.existsSync(dir)) {
+  console.log("Folder Created!"); 
+  fs.mkdirSync(dir);
+}
+app.get("/s", (req,res) =>{
 
-app.get('/', function (req, res){
-    res.sendFile(__dirname + '/index.html');
 });
+app.get("/", (req, res) => {
+    res.send("")
+})
 
-app.post('/', function (req, res){
+app.post("/", (req, res) => {
     var form = new formidable.IncomingForm();
 
     form.parse(req);
@@ -31,19 +39,23 @@ app.post('/', function (req, res){
         console.log('Uploaded ' + file.name);
     });
 
-    res.sendFile(__dirname + '/index.html');
+	form.on("end", function() {
+        res.sendFile(__dirname + "/Uploaded.html");
+    }); 
+
+       
 });
 
-
+    
 //Connect to Mongo
 mongoose
     .connect(db)
     .then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err));
 
-    //Use routes
-    app.use('/api/keywords', keywords);
+//Use routes
+app.use('/api/keywords', keywords);
 
-    const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
-    app.listen(port, () => console.log(`Server started on port ${port}`));
+app.listen(port, () => console.log(`Server started on port ${port}`));
