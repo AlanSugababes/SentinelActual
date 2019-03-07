@@ -4,8 +4,10 @@ import {
     Route,
     Link
 } from 'react-router-dom'
+import Home from './Home.js'
 import Upload from './Upload.js'
 import AddKeyword from './AddKeyword.js'
+import FileSubmitted from './FileSubmitted.js'
 
 
 import '../css/NavBar.css'
@@ -18,8 +20,8 @@ class NavBar extends Component {
 
             page1:"Upload",
             page2:"Add New Keyword",
-            page3:"History",
-            page4:"Help"
+            page3:"Report"
+        
 
         }
     }
@@ -30,15 +32,18 @@ class NavBar extends Component {
             <div>
             <Router>
                     <nav>
-                        <div className="navMenu"><h2><img src="Sentinel.png" width="50" height="50" alt="Sentinel icon" />    Sentinel</h2>
+                        <div className="navMenu"><Link to="/"><h2><img src="Sentinel.png" width="50" height="50" alt="Sentinel icon" />    Sentinel</h2></Link>
                             <ul className="topNav" id="topNavJS">
-                                <li><Link to="/">{this.state.page1}</Link></li>
+                                 
+                                <li><Link to="/Upload">{this.state.page1}</Link></li>
                                 <li><Link to="/AddKeyword">{this.state.page2}</Link></li>
-                                <li><Link to="/History">{this.state.page3}</Link></li>
-                                <li><Link to="/Help">{this.state.page4}</Link></li>
+                                <li><Link to="/Report">{this.state.page3}</Link></li>
+                               
                             </ul> 
-                              <Route exact path="/" component={Upload}/> 
-                              <Route exact path="/AddKeyword" component={AddKeyword}/>     
+                              <Route exact path="/" component={Home}/> 
+                              <Route exact path="/Upload" component={Upload}/> 
+                              <Route exact path="/AddKeyword" component={AddKeyword}/>  
+                              <Route exact path="/FileSubmitted" component={FileSubmitted}/>        
                         </div>    
                     </nav>
             </Router>

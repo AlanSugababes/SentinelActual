@@ -18,12 +18,10 @@ class Upload extends Component {
 
         }
 
-
-
         this.submitFile = this.submitFile.bind(this);
         this.ableToSubmit = this.ableToSubmit.bind(this);
         this.showKeyWords = this.showKeyWords.bind(this);
-         this.refresh = this.refresh.bind(this);
+   
     }
 
     componentDidMount() {
@@ -55,7 +53,7 @@ class Upload extends Component {
 
             button.disabled = true;
             this.setState({
-                reportNameMessage: "Please enter a report name",
+                reportNameMessage: "Please enter a Report Title",
                 fileTypeMessage: "",
                 submitMessage: ""
 
@@ -99,9 +97,6 @@ class Upload extends Component {
     }
 
     
-refresh(){
-document.location.reload(true);
-}
 
 
 
@@ -109,10 +104,10 @@ document.location.reload(true);
 
         return (
             <div className="pageContent">
-                <h2>{this.state.title}</h2>
+                <h1>{this.state.title}</h1>
 
                 <p id="intro">Welcome. In order to use this upload service you will need to select <br></br>
-                    a PDF file. Please select one and add a title for the report to continue.</p>
+                    a PDF file. Please select one and add a Report Title for the report to continue.</p>
                     
                     <form action="/" encType="multipart/form-data" method="post" >
                         <div  className="reportSection"><ReportTitle clickable={this.ableToSubmit} /></div>
@@ -125,7 +120,6 @@ document.location.reload(true);
                     <p>{this.state.reportNameMessage}</p>
                     <p>{this.state.submitMessage}</p>
 
-                    <button onClick={this.refresh} id="refreshButton" >New Submission</button>
 
                     <p id="keyWordLocation" hidden > KeyWords: <input type="text" id ="keyWordAmount" /> </p>
 

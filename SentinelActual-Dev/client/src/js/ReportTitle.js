@@ -7,7 +7,7 @@ class ReportTitle extends Component {
 
                 <div>
                  Report Title:
-                <input type="text" placeholder="Enter name" id="ReportName" onChange={this.props.clickable}/>
+                 <input type="text" placeholder="Enter name" id="ReportName" onChange={this.props.clickable} required/>
                 </div>
         );
     }

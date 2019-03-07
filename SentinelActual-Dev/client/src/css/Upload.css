@@ -2,6 +2,11 @@ body{
     padding: 20px;
     background: #aec6cf;
 }
+
+h1{
+    text-align: center;
+}
+
 h2{
     font-size: 30px;
     font-weight: 5px;
@@ -26,7 +31,6 @@ div.pageContent{
 #submitButton{
   padding: 10px;
   margin: 20px;
- 
 }
 
 
@@ -37,4 +41,6 @@ div.pageContent{
 
 #reportSection{
     padding: 10px;
+
 }
+

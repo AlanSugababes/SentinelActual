@@ -84,7 +84,7 @@ class AddKeyword extends Component{
         
             return (
                 <div className="pageContent">
-                    <h2>{this.state.title}</h2>
+                    <h1>{this.state.title}</h1>
         
                     <p id="intro">Please enter a keyword you would like to add to the database into the field provided, once you are happy
                     with your entry please click the submit button.</p>
