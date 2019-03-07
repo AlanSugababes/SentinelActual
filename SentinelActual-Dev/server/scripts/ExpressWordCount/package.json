@@ -1,29 +1,21 @@
 {
-  "name": "expresswordcounter",
+  "name": "mogocall",
   "version": "1.0.0",
-  "description": "keyword counting component for the sentinel project",
-  "main": "lab1.js",
-  "directories": {
-    "test": "test"
-  },
+  "description": "",
+  "main": "server.js",
   "dependencies": {
-    "babel": "^6.23.0",
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "lodash": "^4.17.11",
-    "node": "^10.15.2"
+    "mongodb": "^3.1.13",
+    "node": "^10.15.2",
+    "nodemon": "^1.18.10",
+    "pdf-parse": "^1.1.1"
   },
-  "devDependencies": {
-    "mocha": "^6.0.2"
-  },
+  "devDependencies": {},
   "scripts": {
-    "test": "mocha"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "keywords": [
-    "mocha",
-    "express",
-    "node",
-    "keyword"
-  ],
-  "author": "Jakob Brennan",
+  "author": "",
   "license": "ISC"
 }
