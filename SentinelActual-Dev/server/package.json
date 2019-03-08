@@ -7,7 +7,6 @@
     "client-install": "cd client && npm install",
     "start": "node server.js",
     "server": "nodemon server.js"
-
   },
   "author": "Josh Saul",
   "license": "MIT",
@@ -16,7 +15,8 @@
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mongoose": "^5.4.17"
+    "mongoose": "^5.4.17",
+    "pdf-parse": "^1.1.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

@@ -1,6 +1,6 @@
 const chokidar = require("chokidar");
-const xPDFtoJSONConverter = require("C:\\Users\\Admin\\Downloads\\SentinelActual-master\\SentinelActual\\SentinelActual-Dev\\server\\scripts\\ExpressWordCount\\pdftojson.js");
-let watcher = chokidar.watch("C:/Users/Admin/Downloads/SentinelActual-master/SentinelActual/SentinelActual-Dev/server/uploads", { ignored: /^\./, persistent: true });
+const xPDFtoJSONConverter = require("//var//lib//jenkins//workspace//Build@2//SentinelActual//SentinelActual-Dev//server//scripts//ExpressWordCount//pdftojson.js");
+let watcher = chokidar.watch("//var//lib//jenkins//workspace//Build@2SentinelActual//SentinelActual-Dev//server//uploads", { ignored: /^\./, persistent: true });
 
 //Chokidar watching PDF dir
 watcher
