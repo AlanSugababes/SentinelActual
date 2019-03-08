@@ -6,7 +6,8 @@ class FileSubmitted extends Component {
     return (
       <div >
 
-     <h2>Your File has been submitted!</h2>
+     <h2>Success Your File has been submitted!</h2>
+      <p>Your report has been generated.</p>
       </div>
     );
   }

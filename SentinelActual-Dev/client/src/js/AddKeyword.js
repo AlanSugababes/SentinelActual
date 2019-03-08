@@ -40,7 +40,7 @@ class AddKeyword extends Component{
             button.disabled = true;
             this.setState({
             blankKeywordMessage:"",
-            duplicateKeywordMessage:"Error: Duplicate keyword entered please enter a new keyword!",
+            duplicateKeywordMessage:"Error: This keyword already exists please enter a new keyword!",
             submitMessage:""
             });
 
@@ -91,7 +91,7 @@ class AddKeyword extends Component{
         
                         <div  className="reportSection"><KeywordField clickable={this.ableToSubmit} /></div>
         
-                        <button onClick={this.submitKeyword} id="submitButton" >Submit</button>
+                        <button onClick={this.submitKeyword} id="submitButton" >Send Keyword</button>
         
                         <p>{this.state.blankKeywordMessage}</p>
                         <p>{this.state.duplicateKeywordMessage}</p>

@@ -106,14 +106,14 @@ class Upload extends Component {
             <div className="pageContent">
                 <h1>{this.state.title}</h1>
 
-                <p id="intro">Welcome. In order to use this upload service you will need to select <br></br>
+                <p id="intro">Welcome to the uploads page! To continue please enter a report title for the generated report <br></br>
                     a PDF file. Please select one and add a Report Title for the report to continue.</p>
                     
                     <form action="/" encType="multipart/form-data" method="post" >
                         <div  className="reportSection"><ReportTitle clickable={this.ableToSubmit} /></div>
                         Select File: 
                         <input id="fileUpload" required="required" type="file" name="upload" accept=".pdf" onChange={this.ableToSubmit}/>
-                        <input type="submit" onSubmit={this.submitFile} value="Upload" id="submitButton" />
+                        <input type="submit" onSubmit={this.submitFile} value="Send File" id="submitButton" />
                     </form>
         
                     <p>{this.state.fileTypeMessage}</p>
